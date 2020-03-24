@@ -70,8 +70,9 @@ define Package/luci-app-chinadns/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/chinadns.*.lmo $(1)/usr/lib/lua/luci/i18n/
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(INSTALL_DATA) ./files/luci/controller/chinadns.lua $(1)/usr/lib/lua/luci/controller/chinadns.lua
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/chinadns
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
 	$(INSTALL_DATA) ./files/luci/model/cbi/chinadns.lua $(1)/usr/lib/lua/luci/model/cbi/chinadns.lua
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-chinadns $(1)/etc/uci-defaults/luci-chinadns
 endef
 
