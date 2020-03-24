@@ -1,2 +1,3 @@
 # luci-app-chinadns
-fshh1988/luci-app-chinadns
+
+配合openwrt-chinadns使用
