@@ -46,9 +46,11 @@ endef
 define Package/luci-app-chinadns/postinst
 #!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
-	( . /etc/uci-defaults/luci-chinadns ) && rm -f /etc/uci-defaults/luci-chinadns
-	chmod 755 /etc/init.d/chinadns >/dev/null 2>&1
-	/etc/init.d/chinadns enable >/dev/null 2>&1
+	if [ -f /etc/uci-defaults/luci-chinadns ]; then
+		( . /etc/uci-defaults/luci-chinadns ) && \
+		rm -f /etc/uci-defaults/luci-chinadns
+	fi
+	rm -rf /tmp/luci-indexcache
 fi
 exit 0
 endef
