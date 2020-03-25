@@ -43,7 +43,7 @@ endef
 define Build/Compile
 endef
 
-define Package/openwrt-dist-luci/postinst
+define Package/luci-app-chinadns/postinst
 #!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
 	( . /etc/uci-defaults/luci-chinadns ) && rm -f /etc/uci-defaults/luci-chinadns
